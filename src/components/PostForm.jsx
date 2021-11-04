@@ -6,7 +6,7 @@ import MyInput from './UI/input/MyInput';
 
 
 const PostForm = ({create}) => {
-    const [post, setPost] = useState({ tittle: '', body: '' })
+    const [post, setPost] = useState({ title: '', body: '' })
 
     const addNewPost = (e) => {
         e.preventDefault()
@@ -15,7 +15,7 @@ const PostForm = ({create}) => {
             ...post, id: Date.now ()
         }
         create(newPost)
-        setPost({ tittle: '', body: '' });
+        setPost({ title: '', body: '' });
     
       }
 
@@ -23,8 +23,8 @@ const PostForm = ({create}) => {
         <form>
             {/* Управляемый компонент */}
             <MyInput
-                value={post.tittle}
-                onChange={e => setPost({ ...post, tittle: e.target.value })}
+                value={post.title}
+                onChange={e => setPost({ ...post, title: e.target.value })}
                 type='text'
                 placeholder='Post name'
             />
